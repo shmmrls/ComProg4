@@ -1,0 +1,840 @@
+package act4_morales; 
+import java.util.Scanner;
+import java.text.DecimalFormat;
+/**
+ *
+ * @author Trisha Mia Morales
+ */
+public class Act4_Morales {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       
+        menu();
+        addToCart();
+
+      
+    }
+    
+    public static void menu(){
+        System.out.println("\t\t\t\t************************************************************************************************************************");
+        System.out.println("\t\t\t\t*                                                                                                                      *");
+        System.out.println("\t\t\t\t*                                                 Papa Mar's Pizza House                                               *");
+        System.out.println("\t\t\t\t*                                                                                                                      *");
+        System.out.println("\t\t\t\t************************************************************************************************************************");
+        System.out.println();
+        System.out.println("\t***********" + "\t\t************************************************************************************************************************" + "\t\t***********");
+        System.out.println("\t *  * *  * " + "\t\t*                                                                                                                      *" + "\t\t *  * *  * ");
+        System.out.println("\t  *  *  *  " + "\t\t*                                                         Menu                                                         *" + "\t\t  *  *  *  ");
+        System.out.println("\t   * * *   " + "\t\t*                                                                                                                      *" + "\t\t   * * *   ");
+        System.out.println("\t     *     " + "\t\t************************************************************************************************************************" + "\t\t     *     ");
+        System.out.println();
+        System.out.println("\t\t\t\t************************************      ************************************      ************************************");
+        System.out.println("\t\t\t\t*              Pizza               *      *           Beverage(1L)           *      *              Pasta               *");
+        System.out.println("\t\t\t\t*                                  *      *                                  *      *                                  *");
+        System.out.println("\t\t\t\t*   1. Pepperoni        P439.00    *      *   6. Coke               P85.00   *      *  11. Creamy Crab Meat   P129.00  *");
+        System.out.println("\t\t\t\t*   2. Hawaiaan         P439.00    *      *   7. Royal              P75.00   *      *  12. Spinach Alfredo    P129.00  *");
+        System.out.println("\t\t\t\t*   3. Garden Special   P369.00    *      *   8. Sprite             P90.00   *      *  13. Three Cheese       P129.00  *");
+        System.out.println("\t\t\t\t*   4. Smoky Cheese     P369.00    *      *   9. Pepsi              P80.00   *      *  14. Carbonara          P129.00  *");
+        System.out.println("\t\t\t\t*   5. Vegetarian       P475.00    *      *   10. Iced Tea          P65.00   *      *  15. Cheesy Mushroom    P129.00  *");
+        System.out.println("\t\t\t\t************************************      ************************************      ************************************");
+        System.out.println();
+        System.out.println("\t\t\t\t************************************      ************************************      ************************************");
+        System.out.println("\t\t\t\t*       Best Sellers Pizza         *      *               Sides              *      *          Ultimate Bundles        *");
+        System.out.println("\t\t\t\t*                                  *      *                                  *      *                                  *");
+        System.out.println("\t\t\t\t*  16. PowerPapa Loaded  P429.00   *      *   21. Salty Sticks     P159.00   *      *  26. Family Bundle A   P1299.00  *");
+        System.out.println("\t\t\t\t*  17. All the Veggie    P429.00   *      *   22. Cheese Sticks    P159.00   *      *  27. Family Bundle B   P1139.00  *");
+        System.out.println("\t\t\t\t*  18. Beef Overload     P369.00   *      *   23. Breadsticks      P189.00   *      *  28. Barkada Bundle A  P 929.00  *");
+        System.out.println("\t\t\t\t*  19. Burger Pizza      P369.00   *      *   24. Garlic Bread     P189.00   *      *  29. Barkada Bundle B  P 739.00  *");
+        System.out.println("\t\t\t\t*  20. Cheese Overload   P299.00   *      *   25. Potato Wedges    P159.00   *      *  30. TwoSome Bundle    P 669.00  *");
+        System.out.println("\t\t\t\t************************************      ************************************      ************************************");
+        System.out.println();
+        System.out.println("\t\t\t\t************************************************************************************************************************");
+        System.out.println();
+        System.out.println("\t\t\t\t   ------------------------------------- ALL ABOUT THE ULTIMATE BUNDLES!!! ---------------------------------------------   ");
+        System.out.println();
+        System.out.println("\t\t\t\t                                       Family Bundle A");
+        System.out.println("\t\t\t\t                                                12 inch PowerPapa Overload");
+        System.out.println("\t\t\t\t                                                Carbonara Family Platter");
+        System.out.println("\t\t\t\t                                                Potato Wedges");
+        System.out.println("\t\t\t\t                                                1L Coca-Cola");
+        System.out.println();
+        System.out.println("\t\t\t\t                                       Family Bundle B");
+        System.out.println("\t\t\t\t                                                15 inch Hawaiaan");
+        System.out.println("\t\t\t\t                                                Carbonara Solo");
+        System.out.println("\t\t\t\t                                                Potato Wedges");
+        System.out.println("\t\t\t\t                                                1L Coca-Cola");
+        System.out.println();
+        System.out.println("\t\t\t\t                                       Barkad Bundle A");
+        System.out.println("\t\t\t\t                                                12 inch Half Smoky Cheese, Half Pepperoni");
+        System.out.println("\t\t\t\t                                                Carbonara Solo");
+        System.out.println("\t\t\t\t                                                Potato Wedges");
+        System.out.println("\t\t\t\t                                                1L Coca-Cola");
+        System.out.println();
+        System.out.println("\t\t\t\t                                       Barkada Bundle B");
+        System.out.println("\t\t\t\t                                                12 inch Half Beef Overload, Half Hawaiian");
+        System.out.println("\t\t\t\t                                                Carbonara Duo");
+        System.out.println("\t\t\t\t                                                1L Coca-Cola");
+        System.out.println();
+        System.out.println("\t\t\t\t                                       TwoSome Bundle");
+        System.out.println("\t\t\t\t                                                9 inch Half PowerPapa Overload, Half Hawaiian");
+        System.out.println("\t\t\t\t                                                Carbonara Duo");
+        System.out.println();
+        System.out.println("\t\t\t\t************************************************************************************************************************");
+        System.out.println();
+        System.out.println();
+        System.out.println("\n\t\t\t\t========================================================================================================================");
+        System.out.println();
+        System.out.println("\t\t\t\t\t***********                            Welcome to Papa Mar's Pizza House                   " + "\t***********");
+        System.out.println("\n\t\t\t\t========================================================================================================================");
+        System.out.println();
+        System.out.println("\t\t\t\t Dear valuable customers, please read the instructions carefully before entering your answer to avoid errors. Thank you!");
+        System.out.println("\n\t\t\t\t========================================================================================================================");
+        System.out.println();
+    }
+   
+  public static void addToCart() {
+    Scanner scanner = new Scanner(System.in);
+    DecimalFormat df = new DecimalFormat("0.00");
+
+    int choose, quantity, size, discountType;
+    double payment;
+    float total = 0.0f;
+    String inOut;
+    char pastaSize, discountEligible;
+
+    float pepperoni = 439.00f;
+    float hawaiian = 439.00f;
+    float gardenSpecial = 369.00f;
+    float smokyCheese = 369.00f;
+    float vegetarian = 475.00f;
+
+    float coke = 85.00f;
+    float royal = 75.00f;
+    float sprite = 90.00f;
+    float pepsi = 80.00f;
+    float icedTea = 65.00f;
+
+    float creamyCrabmeat = 129.00f;
+    float spinachAlfredo = 129.00f;
+    float threeCheese = 129.00f;
+    float carbonara = 129.00f;
+    float cheesyMushroom = 129.00f;
+
+    float powerPapaLoaded = 429.00f;
+    float allVeggie = 429.00f;
+    float beefOverload = 369.00f;
+    float burgerPizza = 369.00f;
+    float cheeseOverload = 299.00f;
+
+    float saltySticks = 159.00f;
+    float cheeseSticks = 159.00f;
+    float breadSticks = 189.00f;
+    float garlicBread = 189.00f;
+    float potatoWedges = 159.00f;
+
+    float familyBundleA = 1299.00f;
+    float familyBundleB = 1139.00f;
+    float barkadaBundleA = 929.00f;
+    float barkadaBundleB = 739.00f;
+    float twoSomeBundle = 669.00f;
+    
+    
+    int pepperoniQty9 = 0, pepperoniQty12 = 0, pepperoniQty15 = 0;
+    int hawaiianQty9 = 0, hawaiianQty12 = 0, hawaiianQty15 = 0;
+    int gardenSpecialQty9 = 0, gardenSpecialQty12 = 0, gardenSpecialQty15 = 0;
+    int smokyCheeseQty9 = 0, smokyCheeseQty12 = 0, smokyCheeseQty15 = 0;
+    int vegetarianQty9 = 0, vegetarianQty12 = 0, vegetarianQty15 = 0;
+
+    int cokeQty = 0, royalQty = 0, spriteQty = 0, pepsiQty = 0, icedTeaQty = 0;
+
+    int creamyCrabmeatQtyS = 0, creamyCrabmeatQtyD = 0, creamyCrabmeatQtyF = 0;
+    int spinachAlfredoQtyS = 0, spinachAlfredoQtyD = 0, spinachAlfredoQtyF = 0;
+    int threeCheeseQtyS = 0, threeCheeseQtyD = 0, threeCheeseQtyF = 0;
+    int carbonaraQtyS = 0, carbonaraQtyD = 0, carbonaraQtyF = 0;
+    int cheesyMushroomQtyS = 0, cheesyMushroomQtyD = 0, cheesyMushroomQtyF = 0;
+
+    int powerPapaLoadedQty9 = 0, powerPapaLoadedQty12 = 0, powerPapaLoadedQty15 = 0;
+    int allVeggieQty9 = 0, allVeggieQty12 = 0, allVeggieQty15 = 0;
+    int beefOverloadQty9 = 0, beefOverloadQty12 = 0, beefOverloadQty15 = 0;
+    int burgerPizzaQty9 = 0, burgerPizzaQty12 = 0, burgerPizzaQty15 = 0;
+    int cheeseOverloadQty9 = 0, cheeseOverloadQty12 = 0, cheeseOverloadQty15 = 0;
+
+    int saltySticksQty = 0, cheeseSticksQty = 0, breadSticksQty = 0, garlicBreadQty = 0, potatoWedgesQty = 0;
+
+    int familyBundleAQty = 0, familyBundleBQty = 0, barkadaBundleAQty = 0, barkadaBundleBQty = 0, twoSomeBundleQty = 0;
+
+    do {
+        System.out.println();
+        System.out.print("\t\t\t\tEnter the number of the food item you would like to order (0 to finish adding to cart): ");
+        choose = scanner.nextInt();
+
+        if (choose == 0) {
+            break; 
+        }
+
+        System.out.print("\t\t\t\tEnter the quantity of your selected food item: ");
+        quantity = scanner.nextInt();
+
+        switch (choose) {
+            // PIZZAS
+
+            case 1:
+                System.out.print("\t\t\t\tSelect size (9, 12, or 15): ");
+                size = scanner.nextInt();
+                if (size == 9) {
+                    total += pepperoni * quantity;
+                    pepperoniQty9 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Pepperoni Pizza (9 inch) added to cart!");
+                }
+                else if (size == 12) {
+                    total += (pepperoni + pepperoni * 0.40f) * quantity;
+                    pepperoniQty12 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Pepperoni Pizza (12 inch) added to cart!");
+                }
+                else if (size == 15){ 
+                    total += (pepperoni + pepperoni * 0.80f) * quantity;
+                    pepperoniQty15 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Pepperoni Pizza (15 inch) added to cart!");
+                }
+                else 
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try again.");
+                break;
+
+            case 2:
+                System.out.print("\t\t\t\tSelect size (9, 12, or 15): ");
+                size = scanner.nextInt();
+                if (size == 9) {
+                    total += hawaiian * quantity;
+                    hawaiianQty9 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Hawaiian Pizza (9 inch) added to cart!");
+                }
+                else if (size == 12) {
+                    total += (hawaiian + hawaiian * 0.40f) * quantity;
+                    hawaiianQty12 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Hawaiian Pizza (12 inch) added to cart!");
+                }
+                else if (size == 15) {
+                    total += (hawaiian + hawaiian * 0.80f) * quantity;
+                    hawaiianQty15 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Hawaiian Pizza (15 inch) added to cart!");
+                }
+                else System.out.println("\n\t\t\t\tInvalid entry of size choice. Try again.");
+                break;
+
+            case 3: 
+                System.out.print("\t\t\t\tSelect size (9, 12, or 15): ");
+                size = scanner.nextInt();
+                if (size == 9) {
+                    total += gardenSpecial * quantity;
+                    gardenSpecialQty9 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Garden Special Pizza (9 inch) added to cart!");
+                }
+                else if (size == 12) {
+                    total += (gardenSpecial + gardenSpecial * 0.40f) * quantity;
+                    gardenSpecialQty12 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Garden Special Pizza (12 inch) added to cart!");
+                }
+                else if (size == 15) {
+                    total += (gardenSpecial + gardenSpecial * 0.80f) * quantity;
+                    gardenSpecialQty15 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Garden Special Pizza (15 inch) added to cart!");
+                }
+                else 
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try again.");
+                break;
+
+            case 4: 
+                System.out.print("\t\t\t\tSelect size (9, 12, or 15): ");
+                size = scanner.nextInt();
+                if (size == 9) {
+                    total += smokyCheese * quantity;
+                    smokyCheeseQty9 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Smoky Cheese Pizza (9 inch) added to cart!");
+                }
+                else if (size == 12) {
+                    total += (smokyCheese + smokyCheese * 0.40f) * quantity;
+                    smokyCheeseQty12 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Smoky Cheese Pizza (12 inch) added to cart!");
+                }
+                else if (size == 15) {
+                    total += (smokyCheese + smokyCheese * 0.80f) * quantity;
+                    smokyCheeseQty15 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Smoky Cheese Pizza (15 inch) added to cart!");
+                }
+                else System.out.println("\n\t\t\t\tInvalid entry of size choice. Try again.");
+                break;
+
+            case 5: 
+                System.out.print("\t\t\t\tSelect size (9, 12, or 15): ");
+                size = scanner.nextInt();
+                if (size == 9) {
+                    total += vegetarian * quantity;
+                    vegetarianQty9 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Vegetarian Pizza (9 inch) added to cart!");
+                }
+                else if (size == 12) {
+                    total += (vegetarian + vegetarian * 0.40f) * quantity;
+                    vegetarianQty12 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Vegetarian Pizza (12 inch) added to cart!");
+                }
+                else if (size == 15) {
+                    total += (vegetarian + vegetarian * 0.80f) * quantity;
+                    vegetarianQty15 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Vegetarian Pizza (15 inch) added to cart!");
+                }
+                else 
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try again.");
+                break;
+
+            // DRINKS/BEVERAGE
+
+            case 6:
+                total += coke * quantity;
+                cokeQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Coke added to cart!");
+                break;
+
+            case 7: 
+                total += royal * quantity;
+                royalQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Royal added to cart!");
+                break;
+
+            case 8: 
+                total += sprite * quantity;
+                spriteQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Sprite added to cart!");
+                break;
+
+            case 9: 
+                total += pepsi * quantity;
+                pepsiQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Pepsi added to cart!");
+                break;
+
+            case 10: 
+                total += icedTea * quantity;
+                icedTeaQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Iced Tea added to cart!");
+                break;
+
+            //PASTA
+
+            case 11: {
+                System.out.print("\t\t\t\tSelect size (S for solo, D for duo, or F for family): ");
+                pastaSize = scanner.next().charAt(0);
+                if (pastaSize == 'S' || pastaSize == 's') {
+                    total += creamyCrabmeat * quantity;
+                    creamyCrabmeatQtyS += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Creamy Crabmeat Pasta (Solo) added to cart!");
+                } else if (pastaSize == 'D' || pastaSize == 'd') {
+                    total += (creamyCrabmeat * 2) * quantity;
+                    creamyCrabmeatQtyD += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Creamy Crabmeat Pasta (Duo) added to cart!");
+                } else if (pastaSize == 'F' || pastaSize == 'f') {
+                    total += (creamyCrabmeat * 4) * quantity;
+                    creamyCrabmeatQtyF += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Creamy Crabmeat Pasta (Family) added to cart!");
+                } else {
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try to order again.");
+                }
+                break;
+            }
+
+            case 12: {
+                System.out.print("\t\t\t\tSelect size (S for solo, D for duo, or F for family): ");
+                pastaSize = scanner.next().charAt(0);
+                if (pastaSize == 'S' || pastaSize == 's') {
+                    total += spinachAlfredo * quantity;
+                    spinachAlfredoQtyS += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Spinach Alfredo Pasta (Solo) added to cart!");
+                } else if (pastaSize == 'D' || pastaSize == 'd') {
+                    total += (spinachAlfredo * 2) * quantity;
+                    spinachAlfredoQtyD += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Spinach Alfredo Pasta (Duo) added to cart!");
+                } else if (pastaSize == 'F' || pastaSize == 'f') {
+                    total += (spinachAlfredo * 4) * quantity;
+                    spinachAlfredoQtyF += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Spinach Alfredo Pasta (Family) added to cart!");
+                } else {
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try to order again.");
+                }
+                break;
+            }
+
+            case 13: {
+                System.out.print("\t\t\t\tSelect size (S for solo, D for duo, or F for family): ");
+                pastaSize = scanner.next().charAt(0);
+                if (pastaSize == 'S' || pastaSize == 's') {
+                    total += threeCheese * quantity;
+                    threeCheeseQtyS += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Three Cheese Pasta (Solo) added to cart!");
+                } else if (pastaSize == 'D' || pastaSize == 'd') {
+                    total += (threeCheese * 2) * quantity;
+                    threeCheeseQtyD += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Three Cheese Pasta (Duo) added to cart!");
+                } else if (pastaSize == 'F' || pastaSize == 'f') {
+                    total += (threeCheese * 4) * quantity;
+                    threeCheeseQtyF += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Three Cheese Pasta (Family) added to cart!");
+                } else {
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try to order again.");
+                }
+                break;
+            }
+
+            case 14: {
+                System.out.print("\t\t\t\tSelect size (S for solo, D for duo, or F for family): ");
+                pastaSize = scanner.next().charAt(0);
+                if (pastaSize == 'S' || pastaSize == 's') {
+                    total += carbonara * quantity;
+                    carbonaraQtyS += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Carbonara Pasta (Solo) added to cart!");
+                } else if (pastaSize == 'D' || pastaSize == 'd') {
+                    total += (carbonara * 2) * quantity;
+                    carbonaraQtyD += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Carbonara Pasta (Duo) added to cart!");
+                } else if (pastaSize == 'F' || pastaSize == 'f') {
+                    total += (carbonara * 4) * quantity;
+                    carbonaraQtyF += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Carbonara Pasta (Family) added to cart!");
+                } else {
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try to order again.");
+                }
+                break;
+            }
+
+            case 15: {
+                System.out.print("\t\t\t\tSelect size (S for solo, D for duo, or F for family): ");
+                pastaSize = scanner.next().charAt(0);
+                if (pastaSize == 'S' || pastaSize == 's') {
+                    total += cheesyMushroom * quantity;
+                    cheesyMushroomQtyS += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Cheesy Mushroom Pasta (Solo) added to cart!");
+                } else if (pastaSize == 'D' || pastaSize == 'd') {
+                    total += (cheesyMushroom * 2) * quantity;
+                    cheesyMushroomQtyD += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Cheesy Mushroom Pasta (Duo) added to cart!");
+                } else if (pastaSize == 'F' || pastaSize == 'f') {
+                    total += (cheesyMushroom * 4) * quantity;
+                    cheesyMushroomQtyF += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Cheesy Mushroom Pasta (Family) added to cart!");
+                } else {
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try to order again.");
+                }
+                break;
+            }
+                
+            // BEST SELLERS PIZZA
+
+            case 16: {
+                System.out.print("\t\t\t\tSelect size (9, 12, or 15): ");
+                size = scanner.nextInt();
+                if (size == 9) {
+                    total += powerPapaLoaded * quantity;
+                    powerPapaLoadedQty9 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Power Papa Loaded Pizza (9 inch) added to cart!");
+                } else if (size == 12) {
+                    total += (powerPapaLoaded + (powerPapaLoaded * .40)) * quantity;
+                    powerPapaLoadedQty12 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Power Papa Loaded Pizza (12 inch) added to cart!");
+                } else if (size == 15) {
+                    total += (powerPapaLoaded + (powerPapaLoaded * .80)) * quantity;
+                    powerPapaLoadedQty15 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Power Papa Loaded Pizza (15 inch) added to cart!");
+                } else {
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try to order again.");
+                }
+                break;
+            }
+
+            case 17: {
+                System.out.print("\t\t\t\tSelect size (9, 12, or 15): ");
+                size = scanner.nextInt();
+                if (size == 9) {
+                    total += allVeggie * quantity;
+                    allVeggieQty9 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " All Veggie Pizza (9 inch) added to cart!");
+                } else if (size == 12) {
+                    total += (allVeggie + (allVeggie * .40)) * quantity;
+                    allVeggieQty12 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " All Veggie Pizza (12 inch) added to cart!");
+                } else if (size == 15) {
+                    total += (allVeggie + (allVeggie * .80)) * quantity;
+                    allVeggieQty15 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " All Veggie Pizza (15 inch) added to cart!");
+                } else {
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try to order again.");
+                }
+                break;
+            }
+
+            case 18: {
+                System.out.print("\t\t\t\tSelect size (9, 12, or 15): ");
+                size = scanner.nextInt();
+                if (size == 9) {
+                    total += beefOverload * quantity;
+                    beefOverloadQty9 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Beef Overload Pizza (9 inch) added to cart!");
+                } else if (size == 12) {
+                    total += (beefOverload + (beefOverload * .40)) * quantity;
+                    beefOverloadQty12 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Beef Overload Pizza (12 inch) added to cart!");
+                } else if (size == 15) {
+                    total += (beefOverload + (beefOverload * .80)) * quantity;
+                    beefOverloadQty15 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Beef Overload Pizza (15 inch) added to cart!");
+                } else {
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try to order again.");
+                }
+                break;
+            }
+
+            case 19: {
+                System.out.print("\t\t\t\tSelect size (9, 12, or 15): ");
+                size = scanner.nextInt();
+                if (size == 9) {
+                    total += burgerPizza * quantity;
+                    burgerPizzaQty9 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Burger Pizza (9 inch) added to cart!");
+                } else if (size == 12) {
+                    total += (burgerPizza + (burgerPizza * .40)) * quantity;
+                    burgerPizzaQty12 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Burger Pizza (12 inch) added to cart!");
+                } else if (size == 15) {
+                    total += (burgerPizza + (burgerPizza * .80)) * quantity;
+                    burgerPizzaQty15 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Burger Pizza (15 inch) added to cart!");
+                } else {
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try to order again.");
+                }
+                break;
+            }
+
+            case 20: {
+                System.out.print("\n\t\t\t\tSelect size (9, 12, or 15): ");
+                size = scanner.nextInt();
+                if (size == 9) {
+                    total += cheeseOverload * quantity;
+                    cheeseOverloadQty9 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Cheese Overload Pizza (9 inch) added to cart!");
+                } else if (size == 12) {
+                    total += (cheeseOverload + (cheeseOverload * .40)) * quantity;
+                    cheeseOverloadQty12 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Cheese Overload Pizza (12 inch) added to cart!");
+                } else if (size == 15) {
+                    total += (cheeseOverload + (cheeseOverload * .80)) * quantity;
+                    cheeseOverloadQty15 += quantity;
+                    System.out.println("\n\t\t\t\t " + quantity + " Cheese Overload Pizza (15 inch) added to cart!");
+                } else {
+                    System.out.println("\n\t\t\t\tInvalid entry of size choice. Try to order again.");
+                }
+                break;
+            }
+             
+           
+            // ADD ONS
+            case 21:
+                total += saltySticks * quantity;
+                saltySticksQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Salty Sticks added to cart!");
+                break;
+
+            case 22: 
+                total += cheeseSticks * quantity;
+                cheeseSticksQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Cheese Sticks added to cart!");
+                break;
+
+            case 23: 
+                total += breadSticks * quantity;
+                breadSticksQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Bread Sticks added to cart!");
+                break;
+
+            case 24: 
+                total += garlicBread * quantity;
+                garlicBreadQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Garlic Bread added to cart!");
+                break;
+
+            case 25: 
+                total += potatoWedges * quantity;
+                potatoWedgesQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Potato Wedges added to cart!");
+                break;
+
+            // ULTIMATE BUNDLES
+            case 26:
+                total += familyBundleA * quantity;
+                familyBundleAQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Family Bundle A added to cart!");
+                break;
+
+            case 27: 
+                total += familyBundleB * quantity;
+                familyBundleBQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Family Bundle B added to cart!");
+                break;
+
+            case 28: 
+                total += barkadaBundleA * quantity;
+                barkadaBundleAQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Barkada Bundle A added to cart!");
+                break;
+
+            case 29:
+                total += barkadaBundleB * quantity;
+                barkadaBundleBQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " Barkada Bundle B added to cart!");
+                break;
+
+            case 30:
+                total += twoSomeBundle * quantity;
+                twoSomeBundleQty += quantity;
+                System.out.println("\n\t\t\t\t " + quantity + " TwoSome Bundle added to cart!");
+                break;
+
+            default:
+                System.out.println("\n\t\t\t\tNo item found! Try again.");
+                continue;
+        }
+
+        System.out.println("\n\t\t\t\t Item Successfully Added to Cart! Current Total: " + df.format(total));
+        System.out.println();
+
+    } while (true);
+
+    
+     System.out.println("\n\t\t\t\t========================================================================================================================");
+     if (total > 0) {
+        System.out.println("\n\t\t\t\t                                                   ORDER BREAKDOWN");
+        System.out.println("\t\t\t\t========================================================================================================================");
+
+        // Display PIZZAS
+        if (pepperoniQty9 > 0 || pepperoniQty12 > 0 || pepperoniQty15 > 0 || hawaiianQty9 > 0 || hawaiianQty12 > 0 || hawaiianQty15 > 0 || 
+            gardenSpecialQty9 > 0 || gardenSpecialQty12 > 0 || gardenSpecialQty15 > 0 || smokyCheeseQty9 > 0 || smokyCheeseQty12 > 0 || 
+            smokyCheeseQty15 > 0 || vegetarianQty9 > 0 || vegetarianQty12 > 0 || vegetarianQty15 > 0) {
+
+            System.out.println("\n\t\t\t\tPIZZAS:");
+            if (pepperoniQty9 > 0) System.out.println("\t\t\t\t  " + pepperoniQty9 + "x Pepperoni Pizza (9 inch) - " + df.format(pepperoni * pepperoniQty9));
+            if (pepperoniQty12 > 0) System.out.println("\t\t\t\t  " + pepperoniQty12 + "x Pepperoni Pizza (12 inch) - " + df.format((pepperoni + pepperoni * 0.40f) * pepperoniQty12));
+            if (pepperoniQty15 > 0) System.out.println("\t\t\t\t  " + pepperoniQty15 + "x Pepperoni Pizza (15 inch) - " + df.format((pepperoni + pepperoni * 0.80f) * pepperoniQty15));
+
+            if (hawaiianQty9 > 0) System.out.println("\t\t\t\t  " + hawaiianQty9 + "x Hawaiian Pizza (9 inch) - " + df.format(hawaiian * hawaiianQty9));
+            if (hawaiianQty12 > 0) System.out.println("\t\t\t\t  " + hawaiianQty12 + "x Hawaiian Pizza (12 inch) - " + df.format((hawaiian + hawaiian * 0.40f) * hawaiianQty12));
+            if (hawaiianQty15 > 0) System.out.println("\t\t\t\t  " + hawaiianQty15 + "x Hawaiian Pizza (15 inch) - " + df.format((hawaiian + hawaiian * 0.80f) * hawaiianQty15));
+
+            if (gardenSpecialQty9 > 0) System.out.println("\t\t\t\t  " + gardenSpecialQty9 + "x Garden Special Pizza (9 inch) - " + df.format(gardenSpecial * gardenSpecialQty9));
+            if (gardenSpecialQty12 > 0) System.out.println("\t\t\t\t  " + gardenSpecialQty12 + "x Garden Special Pizza (12 inch) - " + df.format((gardenSpecial + gardenSpecial * 0.40f) * gardenSpecialQty12));
+            if (gardenSpecialQty15 > 0) System.out.println("\t\t\t\t  " + gardenSpecialQty15 + "x Garden Special Pizza (15 inch) - " + df.format((gardenSpecial + gardenSpecial * 0.80f) * gardenSpecialQty15));
+
+            if (smokyCheeseQty9 > 0) System.out.println("\t\t\t\t  " + smokyCheeseQty9 + "x Smoky Cheese Pizza (9 inch) - " + df.format(smokyCheese * smokyCheeseQty9));
+            if (smokyCheeseQty12 > 0) System.out.println("\t\t\t\t  " + smokyCheeseQty12 + "x Smoky Cheese Pizza (12 inch) - " + df.format((smokyCheese + smokyCheese * 0.40f) * smokyCheeseQty12));
+            if (smokyCheeseQty15 > 0) System.out.println("\t\t\t\t  " + smokyCheeseQty15 + "x Smoky Cheese Pizza (15 inch) - " + df.format((smokyCheese + smokyCheese * 0.80f) * smokyCheeseQty15));
+
+            if (vegetarianQty9 > 0) System.out.println("\t\t\t\t  " + vegetarianQty9 + "x Vegetarian Pizza (9 inch) - " + df.format(vegetarian * vegetarianQty9));
+            if (vegetarianQty12 > 0) System.out.println("\t\t\t\t  " + vegetarianQty12 + "x Vegetarian Pizza (12 inch) - " + df.format((vegetarian + vegetarian * 0.40f) * vegetarianQty12));
+            if (vegetarianQty15 > 0) System.out.println("\t\t\t\t  " + vegetarianQty15 + "x Vegetarian Pizza (15 inch) - " + df.format((vegetarian + vegetarian * 0.80f) * vegetarianQty15));
+        }
+
+        // Display BEST SELLERS
+        if (powerPapaLoadedQty9 > 0 || powerPapaLoadedQty12 > 0 || powerPapaLoadedQty15 > 0 || allVeggieQty9 > 0 || allVeggieQty12 > 0 || 
+            allVeggieQty15 > 0 || beefOverloadQty9 > 0 || beefOverloadQty12 > 0 || beefOverloadQty15 > 0 || burgerPizzaQty9 > 0 || 
+            burgerPizzaQty12 > 0 || burgerPizzaQty15 > 0 || cheeseOverloadQty9 > 0 || cheeseOverloadQty12 > 0 || cheeseOverloadQty15 > 0) {
+
+            System.out.println("\n\t\t\t\tBEST SELLERS:");
+            if (powerPapaLoadedQty9 > 0) System.out.println("\t\t\t\t  " + powerPapaLoadedQty9 + "x Power Papa Loaded Pizza (9 inch) - " + df.format(powerPapaLoaded * powerPapaLoadedQty9));
+            if (powerPapaLoadedQty12 > 0) System.out.println("\t\t\t\t  " + powerPapaLoadedQty12 + "x Power Papa Loaded Pizza (12 inch) - " + df.format((powerPapaLoaded + (powerPapaLoaded * .40)) * powerPapaLoadedQty12));
+            if (powerPapaLoadedQty15 > 0) System.out.println("\t\t\t\t  " + powerPapaLoadedQty15 + "x Power Papa Loaded Pizza (15 inch) - " + df.format((powerPapaLoaded + (powerPapaLoaded * .80)) * powerPapaLoadedQty15));
+
+            if (allVeggieQty9 > 0) System.out.println("\t\t\t\t  " + allVeggieQty9 + "x All Veggie Pizza (9 inch) - " + df.format(allVeggie * allVeggieQty9));
+            if (allVeggieQty12 > 0) System.out.println("\t\t\t\t  " + allVeggieQty12 + "x All Veggie Pizza (12 inch) - " + df.format((allVeggie + (allVeggie * .40)) * allVeggieQty12));
+            if (allVeggieQty15 > 0) System.out.println("\t\t\t\t  " + allVeggieQty15 + "x All Veggie Pizza (15 inch) - " + df.format((allVeggie + (allVeggie * .80)) * allVeggieQty15));
+
+            if (beefOverloadQty9 > 0) System.out.println("\t\t\t\t  " + beefOverloadQty9 + "x Beef Overload Pizza (9 inch) - " + df.format(beefOverload * beefOverloadQty9));
+            if (beefOverloadQty12 > 0) System.out.println("\t\t\t\t  " + beefOverloadQty12 + "x Beef Overload Pizza (12 inch) - " + df.format((beefOverload + (beefOverload * .40)) * beefOverloadQty12));
+            if (beefOverloadQty15 > 0) System.out.println("\t\t\t\t  " + beefOverloadQty15 + "x Beef Overload Pizza (15 inch) - " + df.format((beefOverload + (beefOverload * .80)) * beefOverloadQty15));
+
+            if (burgerPizzaQty9 > 0) System.out.println("\t\t\t\t  " + burgerPizzaQty9 + "x Burger Pizza (9 inch) - " + df.format(burgerPizza * burgerPizzaQty9));
+            if (burgerPizzaQty12 > 0) System.out.println("\t\t\t\t  " + burgerPizzaQty12 + "x Burger Pizza (12 inch) - " + df.format((burgerPizza + (burgerPizza * .40)) * burgerPizzaQty12));
+            if (burgerPizzaQty15 > 0) System.out.println("\t\t\t\t  " + burgerPizzaQty15 + "x Burger Pizza (15 inch) - " + df.format((burgerPizza + (burgerPizza * .80)) * burgerPizzaQty15));
+
+            if (cheeseOverloadQty9 > 0) System.out.println("\t\t\t\t  " + cheeseOverloadQty9 + "x Cheese Overload Pizza (9 inch) - " + df.format(cheeseOverload * cheeseOverloadQty9));
+            if (cheeseOverloadQty12 > 0) System.out.println("\t\t\t\t  " + cheeseOverloadQty12 + "x Cheese Overload Pizza (12 inch) - " + df.format((cheeseOverload + (cheeseOverload * .40)) * cheeseOverloadQty12));
+            if (cheeseOverloadQty15 > 0) System.out.println("\t\t\t\t  " + cheeseOverloadQty15 + "x Cheese Overload Pizza (15 inch) - " + df.format((cheeseOverload + (cheeseOverload * .80)) * cheeseOverloadQty15));
+        }
+        
+        // Display DRINKS/BEVERAGES
+            if (cokeQty > 0 || royalQty > 0 || spriteQty > 0 || pepsiQty > 0 || icedTeaQty > 0) {
+                System.out.println("\n\t\t\t\tDRINKS/BEVERAGES:");
+                if (cokeQty > 0) System.out.println("\t\t\t\t  " + cokeQty + "x Coke - " + df.format(coke * cokeQty));
+                if (royalQty > 0) System.out.println("\t\t\t\t  " + royalQty + "x Royal - " + df.format(royal * royalQty));
+                if (spriteQty > 0) System.out.println("\t\t\t\t  " + spriteQty + "x Sprite - " + df.format(sprite * spriteQty));
+                if (pepsiQty > 0) System.out.println("\t\t\t\t  " + pepsiQty + "x Pepsi - " + df.format(pepsi * pepsiQty));
+                if (icedTeaQty > 0) System.out.println("\t\t\t\t  " + icedTeaQty + "x Iced Tea - " + df.format(icedTea * icedTeaQty));
+            }
+
+            // Display PASTA
+            if (creamyCrabmeatQtyS > 0 || creamyCrabmeatQtyD > 0 || creamyCrabmeatQtyF > 0 || spinachAlfredoQtyS > 0 || 
+                spinachAlfredoQtyD > 0 || spinachAlfredoQtyF > 0 || threeCheeseQtyS > 0 || threeCheeseQtyD > 0 || 
+                threeCheeseQtyF > 0 || carbonaraQtyS > 0 || carbonaraQtyD > 0 || carbonaraQtyF > 0 || 
+                cheesyMushroomQtyS > 0 || cheesyMushroomQtyD > 0 || cheesyMushroomQtyF > 0) {
+
+                System.out.println("\n\t\t\t\tPASTA:");
+                if (creamyCrabmeatQtyS > 0) System.out.println("\t\t\t\t  " + creamyCrabmeatQtyS + "x Creamy Crabmeat Pasta (Solo) - " + df.format(creamyCrabmeat * creamyCrabmeatQtyS));
+                if (creamyCrabmeatQtyD > 0) System.out.println("\t\t\t\t  " + creamyCrabmeatQtyD + "x Creamy Crabmeat Pasta (Duo) - " + df.format((creamyCrabmeat * 2) * creamyCrabmeatQtyD));
+                if (creamyCrabmeatQtyF > 0) System.out.println("\t\t\t\t  " + creamyCrabmeatQtyF + "x Creamy Crabmeat Pasta (Family) - " + df.format((creamyCrabmeat * 4) * creamyCrabmeatQtyF));
+
+                if (spinachAlfredoQtyS > 0) System.out.println("\t\t\t\t  " + spinachAlfredoQtyS + "x Spinach Alfredo Pasta (Solo) - " + df.format(spinachAlfredo * spinachAlfredoQtyS));
+                if (spinachAlfredoQtyD > 0) System.out.println("\t\t\t\t  " + spinachAlfredoQtyD + "x Spinach Alfredo Pasta (Duo) - " + df.format((spinachAlfredo * 2) * spinachAlfredoQtyD));
+                if (spinachAlfredoQtyF > 0) System.out.println("\t\t\t\t  " + spinachAlfredoQtyF + "x Spinach Alfredo Pasta (Family) - " + df.format((spinachAlfredo * 4) * spinachAlfredoQtyF));
+
+                if (threeCheeseQtyS > 0) System.out.println("\t\t\t\t  " + threeCheeseQtyS + "x Three Cheese Pasta (Solo) - " + df.format(threeCheese * threeCheeseQtyS));
+                if (threeCheeseQtyD > 0) System.out.println("\t\t\t\t  " + threeCheeseQtyD + "x Three Cheese Pasta (Duo) - " + df.format((threeCheese * 2) * threeCheeseQtyD));
+                if (threeCheeseQtyF > 0) System.out.println("\t\t\t\t  " + threeCheeseQtyF + "x Three Cheese Pasta (Family) - " + df.format((threeCheese * 4) * threeCheeseQtyF));
+
+                if (carbonaraQtyS > 0) System.out.println("\t\t\t\t  " + carbonaraQtyS + "x Carbonara Pasta (Solo) - " + df.format(carbonara * carbonaraQtyS));
+                if (carbonaraQtyD > 0) System.out.println("\t\t\t\t  " + carbonaraQtyD + "x Carbonara Pasta (Duo) - " + df.format((carbonara * 2) * carbonaraQtyD));
+                if (carbonaraQtyF > 0) System.out.println("\t\t\t\t  " + carbonaraQtyF + "x Carbonara Pasta (Family) - " + df.format((carbonara * 4) * carbonaraQtyF));
+
+                if (cheesyMushroomQtyS > 0) System.out.println("\t\t\t\t  " + cheesyMushroomQtyS + "x Cheesy Mushroom Pasta (Solo) - " + df.format(cheesyMushroom * cheesyMushroomQtyS));
+                if (cheesyMushroomQtyD > 0) System.out.println("\t\t\t\t  " + cheesyMushroomQtyD + "x Cheesy Mushroom Pasta (Duo) - " + df.format((cheesyMushroom * 2) * cheesyMushroomQtyD));
+                if (cheesyMushroomQtyF > 0) System.out.println("\t\t\t\t  " + cheesyMushroomQtyF + "x Cheesy Mushroom Pasta (Family) - " + df.format((cheesyMushroom * 4) * cheesyMushroomQtyF));
+            }
+
+            // Display ADD-ONS
+            if (saltySticksQty > 0 || cheeseSticksQty > 0 || breadSticksQty > 0 || garlicBreadQty > 0 || potatoWedgesQty > 0) {
+                System.out.println("\n\t\t\t\tADD-ONS:");
+                if (saltySticksQty > 0) System.out.println("\t\t\t\t  " + saltySticksQty + "x Salty Sticks - " + df.format(saltySticks * saltySticksQty));
+                if (cheeseSticksQty > 0) System.out.println("\t\t\t\t  " + cheeseSticksQty + "x Cheese Sticks - " + df.format(cheeseSticks * cheeseSticksQty));
+                if (breadSticksQty > 0) System.out.println("\t\t\t\t  " + breadSticksQty + "x Bread Sticks - " + df.format(breadSticks * breadSticksQty));
+                if (garlicBreadQty > 0) System.out.println("\t\t\t\t  " + garlicBreadQty + "x Garlic Bread - " + df.format(garlicBread * garlicBreadQty));
+                if (potatoWedgesQty > 0) System.out.println("\t\t\t\t  " + potatoWedgesQty + "x Potato Wedges - " + df.format(potatoWedges * potatoWedgesQty));
+            }
+
+            // Display ULTIMATE BUNDLES
+            if (familyBundleAQty > 0 || familyBundleBQty > 0 || barkadaBundleAQty > 0 || barkadaBundleBQty > 0 || twoSomeBundleQty > 0) {
+                System.out.println("\n\t\t\t\tULTIMATE BUNDLES:");
+                if (familyBundleAQty > 0) System.out.println("\t\t\t\t  " + familyBundleAQty + "x Family Bundle A - " + df.format(familyBundleA * familyBundleAQty));
+                if (familyBundleBQty > 0) System.out.println("\t\t\t\t  " + familyBundleBQty + "x Family Bundle B - " + df.format(familyBundleB * familyBundleBQty));
+                if (barkadaBundleAQty > 0) System.out.println("\t\t\t\t  " + barkadaBundleAQty + "x Barkada Bundle A - " + df.format(barkadaBundleA * barkadaBundleAQty));
+                if (barkadaBundleBQty > 0) System.out.println("\t\t\t\t  " + barkadaBundleBQty + "x Barkada Bundle B - " + df.format(barkadaBundleB * barkadaBundleBQty));
+                if (twoSomeBundleQty > 0) System.out.println("\t\t\t\t  " + twoSomeBundleQty + "x TwoSome Bundle - " + df.format(twoSomeBundle * twoSomeBundleQty));
+            }
+    
+    System.out.println("\n\t\t\t\t========================================================================================================================");
+    System.out.println("\t\t\t\t                                                 SUBTOTAL: P " + df.format(total));
+    System.out.println("\t\t\t\t========================================================================================================================");
+
+}
+    
+        double finalTotal = total;
+        if (total > 0) {
+            
+             
+            System.out.print("\t\t\t\t\tAre you eligible for PWD or Senior Citizen discount? (Y or N): ");
+            discountEligible = scanner.next().charAt(0);
+
+            if (discountEligible == 'Y' || discountEligible == 'y') {
+                System.out.print("\t\t\t\t\tSelect discount type (1 for PWD, 2 for Senior Citizen): ");
+                discountType = scanner.nextInt();
+
+                if (discountType == 1) {
+                    finalTotal = total * 0.80f; 
+                    System.out.println("\n\t\t\t\t\tPWD Discount (20%) Applied!");
+                    System.out.println();
+                    System.out.println("\t\t\t\t\tOriginal Total: " + total);
+                    System.out.println("\t\t\t\t\tDiscount Amount: " + df.format(total * 0.20f));
+                    System.out.println("\t\t\t\t\tDiscounted Total: " + df.format(finalTotal));
+                } else if (discountType == 2) {
+                    finalTotal = total * 0.80f; 
+                    System.out.println("\n\t\t\t\t\tSenior Citizen Discount (20%) Applied!");
+                    System.out.println();
+                    System.out.println("\t\t\t\t\tOriginal Total: " + total);
+                    System.out.println("\t\t\t\t\tDiscount Amount: " + df.format(total * 0.20f));
+                    System.out.println("\t\t\t\t\tDiscounted Total: " + df.format(finalTotal));
+                } else {
+                    System.out.println("\n\t\t\t\t\tInvalid discount type. No discount applied.");
+                }
+            }
+            
+            System.out.println();
+            System.out.println("\t\t\t\t========================================================================================================================");
+            System.out.println();
+        
+            System.out.print("\t\t\t\t\tDine In or Take Out: ");
+            scanner.nextLine(); 
+            inOut = scanner.nextLine();
+            
+            if (inOut.equals("Dine In") || inOut.equals("DINE IN") || 
+                inOut.equals("dine in") || inOut.equals("Dine in")) {
+                
+                System.out.println("\n\t\t\t\t========================================================================================================================");
+                System.out.println("\t\t\t\t                                                 Order Completed");
+                System.out.println("\t\t\t\t========================================================================================================================");
+                System.out.println();
+                System.out.println("\n\t\t\t\tDine In Total:                                                                                            " + df.format(finalTotal));
+                
+            } else if (inOut.equals("Take Out") || inOut.equals("TAKE OUT") || 
+                       inOut.equals("take out") || inOut.equals("Take out")) {
+                
+                System.out.println("\n\t\t\t\t========================================================================================================================");
+                System.out.println("\t\t\t\t                                                    Order Completed");
+                System.out.println("\t\t\t\t========================================================================================================================");
+                System.out.println();
+                System.out.println("\n\t\t\t\tTake Out Total:                                                                                           " + df.format(finalTotal));
+                
+            } else {
+                System.out.println("\n\t\t\t\tInvalid entry. Exit the system program to re-do your order.");
+            }
+            System.out.println();
+        } else {
+            System.out.println("\n\t\t\t\tYou have not ordered anything. You can't proceed to payment.");
+        }
+        
+       
+
+
+        do {
+            System.out.print("\t\t\t\tCash Tendered:                                                                                            ");
+            payment = scanner.nextDouble();
+
+            if (payment < finalTotal) {
+                System.out.println("\n\t\t\t\tInsufficient amount! You need at least P " + df.format(finalTotal));
+                System.out.println("\t\t\t\tShortage: P " + df.format(finalTotal - payment));
+                System.out.println("\t\t\t\t\tInput cash tendered again.");
+                System.out.println();
+            } else {
+                System.out.println("\n\t\t\t\tChange:                                                                                                   " + df.format(payment - finalTotal));
+                System.out.println();
+                System.out.println("\n\t\t\t\tVATable Sales:                                                                                            " + df.format(finalTotal - (finalTotal * 0.12)));
+                System.out.println();
+                System.out.println("\n\t\t\t\tVAT (12%):                                                                                                " + df.format(finalTotal * 0.12));
+                System.out.println();
+                break; 
+            }
+        } while (payment < finalTotal);
+        
+        System.out.println("\t\t\t\t========================================================================================================================");
+        System.out.println();
+        System.out.println("\t\t\t\t    Thank you for ordering in our pizza house! We're happy to serve you! Enjoy your MARvelous and ZZAlicious food!");
+        System.out.println();
+        System.out.println("\t\t\t\t                                                    *******************");
+        System.out.println("\t\t\t\t                                                    *                 *");
+        System.out.println("\t\t\t\t                                                     *    *     *    *");
+        System.out.println("\t\t\t\t                                                      *      *      *");
+        System.out.println("\t\t\t\t                                                       *           *");
+        System.out.println("\t\t\t\t                                                        *  *   *  *");
+        System.out.println("\t\t\t\t                                                         *   *   *");
+        System.out.println("\t\t\t\t                                                          *     *");
+        System.out.println("\t\t\t\t                                                            * *");
+        System.out.println("\t\t\t\t                                                             *");
+        
+        scanner.close();
+}
+}
+
